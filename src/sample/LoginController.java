@@ -12,24 +12,37 @@ import java.io.IOException;
 
 public class LoginController {
 
-    public Button login_but;
     public TextField first_name;
     public TextField last_name;
+
+    public void e_log_in() {
+        boolean ret = isName(first_name, last_name);
+        if (ret) {
+            String resource = "Search.fxml";
+            set_search_stage(resource);
+        } else {
+            PopUp.init_error("ERROR: Illegal name entered");
+        }
+    }
 
     public void log_in() {
         boolean ret = isName(first_name, last_name);
         if (ret) {
-            try {
-//                window.setScene(new Scene(root, 300, 150));
-                Parent root1 = FXMLLoader.load(getClass().getResource("Search.fxml"));
-                Stage new_stage = new Stage();
-                new_stage.setScene(new Scene(root1, 1000, 800));
-                Main.changeStage(new_stage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            String resource = "Search.fxml";
+            set_search_stage(resource);
         } else {
             PopUp.init_error("ERROR: Illegal name entered");
+        }
+    }
+
+    private void set_search_stage(String ref) {
+        try {
+            Parent root1 = FXMLLoader.load(getClass().getResource(ref));
+            Stage new_stage = new Stage();
+            new_stage.setScene(new Scene(root1, 1000, 800));
+            Main.changeStage(new_stage);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

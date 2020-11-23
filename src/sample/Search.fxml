@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane hgap="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SearchController">
+<GridPane hgap="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SearchController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -15,40 +16,100 @@
   </columnConstraints>
   <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="20.0" valignment="BOTTOM" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" text="Edit Entries" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-         <children>
-            <TextField />
-            <Label alignment="CENTER" prefHeight="35.0" prefWidth="136.0" text="Final Year" textAlignment="CENTER" />
-         </children>
-      </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-         <children>
-            <TextField />
-            <Label alignment="CENTER" prefHeight="35.0" prefWidth="165.0" text="Initial Year" textAlignment="CENTER" />
-         </children>
-      </VBox>
-      <Label alignment="CENTER" text="Year range to search" textAlignment="CENTER" wrapText="true" GridPane.valignment="TOP">
+      <Button fx:id="edit_countries_btn" mnemonicParsing="false" onAction="#edit_countries" prefHeight="57.0" prefWidth="200.0" text="Edit Entries" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
-            <Font size="48.0" />
+            <Font size="27.0" />
+         </font></Button>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+         <children>
+            <TextField>
+               <font>
+                  <Font size="30.0" />
+               </font></TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="136.0" text="Final Year" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+         <children>
+            <TextField>
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="165.0" text="Initial Year" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <Label alignment="TOP_CENTER" text="Year range to search" textAlignment="CENTER" wrapText="true" GridPane.valignment="TOP">
+         <font>
+            <Font size="32.0" />
          </font></Label>
-      <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-      <Button mnemonicParsing="false" text="Attributes to Search" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-      <Button mnemonicParsing="false" text="Search" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-      <TextField GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <HBox prefHeight="61.0" prefWidth="200.0" spacing="8.0" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+         <children>
+            <TextField prefHeight="60.0" prefWidth="400.0" promptText="Country Name to Search">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </TextField>
+            <Button fx:id="select_att_btn" mnemonicParsing="false" onAction="#select_atts" prefHeight="60.0" prefWidth="310.0" text="Attributes to Search">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="search_btn" mnemonicParsing="false" onAction="#perform_search" prefHeight="60.0" prefWidth="200.0" text="Search">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="60.0" prefWidth="200.0" spacing="8.0" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+         <children>
+            <Button fx:id="compare_btn" mnemonicParsing="false" prefHeight="60.0" prefWidth="400.0" text="Compare Selected Countries" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="view_editors_btn" mnemonicParsing="false" onAction="#show_editors" prefHeight="60.0" prefWidth="200.0" text="View Editors" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="35.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="del_selected_btn" mnemonicParsing="false" onAction="#del_selected" prefHeight="60.0" prefWidth="250.0" text="Delete Selected" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </HBox>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem Ipsum" GridPane.rowIndex="2" GridPane.valignment="TOP" />
    </children>
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
    </padding>
 </GridPane>
