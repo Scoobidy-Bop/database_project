@@ -20,12 +20,11 @@ public class PopUp {
 
         //Two Buttons
         Button yesButton = new Button("Yes");
-        Button noButton = new Button("No");
-
         yesButton.setOnAction(e -> {
             answer = true;
             window.close();
         });
+        Button noButton = new Button("No");
         noButton.setOnAction(e -> {
             answer = false;
             window.close();
