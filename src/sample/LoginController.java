@@ -8,11 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Properties;
 
 
 public class LoginController {
@@ -32,20 +35,22 @@ public class LoginController {
             if (val) {
                 System.out.println(first + " " + last + " is an editor!");
             } else {
-                System.out.println(first + " " + last + " is not an editor :(");
+                System.out.println(first + " " + last + " is not an editor");
             }
             String resource = "Search.fxml";
-            set_search_stage(resource);
+            set_search_stage(resource, val);
         } else {
             PopUp.init_error("ERROR: Illegal name entered");
         }
     }
 
-    private void set_search_stage(String ref) {
+    private void set_search_stage(String ref, boolean val) {
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource(ref));
             Stage new_stage = new Stage();
-            new_stage.setScene(new Scene(root1, 1000, 800));
+            Scene searchScene = new Scene(root1, 1000, 800);
+            searchScene.setUserData(val);
+            new_stage.setScene(searchScene);
             Main.changeStage(new_stage);
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,21 +66,22 @@ public class LoginController {
 
 
     private boolean isEditor(String first, String last) throws Exception{
-//        Properties prop = new Properties();
-//        FileInputStream in = new FileInputStream("./config.properties");
-//
-//        String dab = "nkirsch_DB";
-//        String host = prop.getProperty("host");
-//        String usr = prop.getProperty("user");
-//        String pwd = prop.getProperty("password");
-//        String url = "jdbc:mysql://" + host + "/" + dab;
+        /*
+            We could not figure out config file at this point in time, so we had to hard code lof in info into the file
+            (yes this is very dumb). If you want to access the database that we're pulling from, running the source file
+            "CPSC_project4.sql" on the project github will create the tables that this application will pull from. We
+            want to create a better way to do this, but we're not sure if there is a better way.
+         */
 
-        String url = "jdbc:mysql://cps-database.gonzaga.edu/nkirsch_DB";
-        String usr = "nkirsch";
-        String pwd = "nkirsch21767533";
+        String db = "";
+        String sett = "?serverTimezone=UTC";
+        String domain = "cps-database.gonzaga.edu";
+
+        String url = "jdbc:mysql://" + domain + "/" + db + sett;
+        String usr = "username";
+        String pwd = "password";
 
         try (Connection cn = DriverManager.getConnection(url, usr, pwd)) {
-
             String q = "SELECT * FROM editor WHERE first_name = ? AND last_name = ?";
             PreparedStatement p_stmt = cn.prepareStatement(q);
             p_stmt.setString(1, first);

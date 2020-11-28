@@ -57,6 +57,8 @@ public class PopUp {
         window.setMinWidth(250);
         Label label = new Label();
         label.setText(message);
+        label.setWrapText(true);
+        label.setPadding(new Insets(15,15,15,15));
 
         //Two Buttons
         Button ok_button = new Button("ok");
