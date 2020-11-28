@@ -21,8 +21,9 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="20.0" valignment="BOTTOM" vgrow="SOMETIMES" />
   </rowConstraints>
+
    <children>
-      <Button fx:id="edit_countries_btn" mnemonicParsing="false" onAction="#edit_countries" prefHeight="57.0" prefWidth="200.0" text="Edit Entries" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+      <Button fx:id="edit_countries_btn" onAction="#edit_countries" mnemonicParsing="false" prefHeight="57.0" prefWidth="200.0" text="Edit Entries" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
             <Font size="27.0" />
          </font></Button>
@@ -64,7 +65,7 @@
                   <Font size="28.0" />
                </font>
             </TextField>
-            <Button fx:id="select_att_btn" mnemonicParsing="false" onAction="#select_atts" prefHeight="60.0" prefWidth="310.0" text="Attributes to Search">
+            <Button fx:id="select_att_btn" onAction="#select_atts" mnemonicParsing="false" prefHeight="60.0" prefWidth="310.0" text="Attributes to Search">
                <font>
                   <Font size="28.0" />
                </font>
@@ -72,7 +73,7 @@
                   <Insets left="5.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="search_btn" mnemonicParsing="false" onAction="#perform_search" prefHeight="60.0" prefWidth="200.0" text="Search">
+            <Button fx:id="search_btn" onAction="#perform_search" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Search">
                <font>
                   <Font size="28.0" />
                </font>
@@ -89,7 +90,7 @@
                   <Insets right="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="view_editors_btn" mnemonicParsing="false" onAction="#show_editors" prefHeight="60.0" prefWidth="200.0" text="View Editors" textAlignment="CENTER">
+            <Button fx:id="view_editors_btn" onAction="#show_editors" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="View Editors" textAlignment="CENTER">
                <font>
                   <Font size="27.0" />
                </font>
@@ -97,7 +98,7 @@
                   <Insets right="35.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="del_selected_btn" mnemonicParsing="false" onAction="#del_selected" prefHeight="60.0" prefWidth="250.0" text="Delete Selected" textAlignment="CENTER">
+            <Button fx:id="del_selected_btn" onAction="#del_selected" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="Delete Selected" textAlignment="CENTER">
                <font>
                   <Font size="27.0" />
                </font>
