@@ -1,26 +1,54 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 public class SearchController {
 
-    private boolean isEditor;
+    private static Stage window;
 
-    @FXML
-    private Button edit_countries_btn;
-    @FXML
-    private Button del_selected_btn;
-    @FXML
-    private TextField country_search_name;
-    @FXML
-    private TextField initial_year;
-    @FXML
-    private TextField final_year;
+    public Button edit_countries_btn;
+    public Button del_selected_btn;
+    public Button view_editors_btn;
+    public TextField country_search_name;
+    public TextField initial_year;
+    public TextField final_year;
+
+
+    public void initialize(Boolean editor_val) {
+        try {
+            window = new Stage();
+            Parent loader = FXMLLoader.load(getClass().getResource("Search.fxml"));
+            Scene search_scene = new Scene(loader, 1000, 800);
+            window.setScene(search_scene);
+            Main.stage_settings(window);
+            initItems();
+            if (!editor_val) {
+                edit_countries_btn.setVisible(false);
+                del_selected_btn.setVisible(false);
+                view_editors_btn.setVisible(false);
+            }
+            window.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initItems() {
+        edit_countries_btn = (Button) window.getScene().lookup("#edit_countries_btn");
+        del_selected_btn = (Button) window.getScene().lookup("#del_selected_btn");
+        view_editors_btn = (Button) window.getScene().lookup("#view_editors_btn");
+        country_search_name = (TextField) window.getScene().lookup("country_search_name");
+        initial_year = (TextField) window.getScene().lookup("#country_search_name");
+        final_year = (TextField) window.getScene().lookup("#final_year");
+    }
 
     public void edit_countries() {
         System.out.println("Showing country attribute editor");
