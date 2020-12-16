@@ -1,10 +1,8 @@
 package sample;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -24,7 +22,7 @@ public class LoginController {
 
     public void initialize(Stage primaryStage) throws Exception {
         window = primaryStage;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogIn.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
         Parent root = loader.load();
         window.setScene(new Scene(root, 300, 150));
         Main.stage_settings(primaryStage);
@@ -32,7 +30,7 @@ public class LoginController {
     }
 
 
-    public void log_in() throws Exception {
+    public void logIn() throws Exception {
         boolean ret = isName(first_name, last_name);
         if (ret) {
             String first = first_name.getText();

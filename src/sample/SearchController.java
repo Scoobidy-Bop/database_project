@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 public class SearchController {
 
     private static Stage window;
+    private final int MIN_YEAR = 1965;
+    private final int MAX_YEAR = 2015;
+
 
     public Button edit_countries_btn;
     public Button del_selected_btn;
@@ -46,43 +49,49 @@ public class SearchController {
         del_selected_btn = (Button) window.getScene().lookup("#del_selected_btn");
         view_editors_btn = (Button) window.getScene().lookup("#view_editors_btn");
         country_search_name = (TextField) window.getScene().lookup("country_search_name");
-        initial_year = (TextField) window.getScene().lookup("#country_search_name");
+        initial_year = (TextField) window.getScene().lookup("#initial_year");
+        initial_year.setText(MIN_YEAR + "");
         final_year = (TextField) window.getScene().lookup("#final_year");
+        final_year.setText(MAX_YEAR + "");
     }
 
-    public void edit_countries() {
+    //TODO: John, can you connect this button to your edit stage.
+    // The button shouldn't have any restrictions on when it can/can't open.
+    public void editCountries() {
         System.out.println("Showing country attribute editor");
     }
 
 
-    public void select_atts() {
+    public void selectAtts() {
         System.out.println("Displaying possible search attributes");
     }
 
 
-    public void perform_search() {
+    public void performSearch() {
         String country = country_search_name.getText();
         int init_year = Integer.parseInt(initial_year.getText());
         int fin_year = Integer.parseInt(final_year.getText());
-        if (init_year - fin_year < 0) {
-            System.out.println("Searching for " + country + " from: " + init_year + " - " + fin_year);
-        } else {
-            PopUp.init_error("Illegal year entry. Final year must be after Initial year.");
-        }
+        validateSearch();
     }
 
-    public void compare_selected() {
+
+    private boolean validateSearch() {
+        return false;
+    }
+
+
+    public void compareSelected() {
         System.out.println("Showing all selected countries");
     }
 
 
-    public void show_editors() {
+    public void showEditors() {
         System.out.println("Showing table of editors");
 
     }
 
 
-    public void del_selected() {
+    public void delSelected() {
         boolean ans = PopUp.init_confirm("WARNING", "Are you sure you want delete the selected Country entries?");
         if (ans)
             System.out.println("Deleted selected countries");
