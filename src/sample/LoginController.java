@@ -1,14 +1,12 @@
 package sample;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sun.awt.windows.WPrinterJob;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,38 +15,36 @@ import java.sql.ResultSet;
 
 public class LoginController {
 
+    private boolean editor;
+    static private Stage window;
+
     public TextField first_name;
     public TextField last_name;
 
-    @FXML
-    private Button login_button;
+    public void initialize(Stage primaryStage) throws Exception {
+        window = primaryStage;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        Parent root = loader.load();
+        window.setScene(new Scene(root, 300, 150));
+        Main.stage_settings(primaryStage);
+        window.show();
+    }
 
-    public void log_in() throws Exception {
+
+    public void logIn() throws Exception {
         boolean ret = isName(first_name, last_name);
         if (ret) {
             String first = first_name.getText();
             String last = last_name.getText();
-            boolean val = isEditor(first, last);
-            if (val) {
+            editor = isEditor(first, last);
+            if (editor) {
                 System.out.println(first + " " + last + " is an editor!");
             } else {
-                System.out.println(first + " " + last + " is not an editor :(");
+                System.out.println(first + " " + last + " is not an editor");
             }
-            String resource = "Search.fxml";
-            set_search_stage(resource);
+            shutdown();
         } else {
             PopUp.init_error("ERROR: Illegal name entered");
-        }
-    }
-
-    private void set_search_stage(String ref) {
-        try {
-            Parent root1 = FXMLLoader.load(getClass().getResource(ref));
-            Stage new_stage = new Stage();
-            new_stage.setScene(new Scene(root1, 1000, 800));
-            Main.changeStage(new_stage);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -61,21 +57,20 @@ public class LoginController {
 
 
     private boolean isEditor(String first, String last) throws Exception{
-//        Properties prop = new Properties();
-//        FileInputStream in = new FileInputStream("./config.properties");
-//
-//        String dab = "nkirsch_DB";
-//        String host = prop.getProperty("host");
-//        String usr = prop.getProperty("user");
-//        String pwd = prop.getProperty("password");
-//        String url = "jdbc:mysql://" + host + "/" + dab;
+        /*
+            We could not figure out config file at this point in time, so we had to hard coded the login info into a
+            separate file. If you want to access the database that we're pulling from, running the source file
+            "CPSC_project4.sql" on the project github will create the tables that this application will pull from. We
+            want to create a better way to do this, but we're not sure how.
+         */
 
-        String url = "jdbc:mysql://cps-database.gonzaga.edu/nkirsch_DB";
-        String usr = "nkirsch";
-        String pwd = "nkirsch21767533";
+        String[] creds = GetSQLInfo.getCredentials();
+        String usr = creds[0];
+        String pwd = creds[1];
+        String url = GetSQLInfo.getUrlConnect();
+
 
         try (Connection cn = DriverManager.getConnection(url, usr, pwd)) {
-
             String q = "SELECT * FROM editor WHERE first_name = ? AND last_name = ?";
             PreparedStatement p_stmt = cn.prepareStatement(q);
             p_stmt.setString(1, first);
@@ -88,6 +83,13 @@ public class LoginController {
             e.printStackTrace();
         }
         return false;
+    }
+
+
+    public void shutdown() {
+        SearchController sc = new SearchController();
+        sc.initialize(editor);
+        window.close();
     }
 
 }

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
-<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 
@@ -23,13 +21,13 @@
   </rowConstraints>
 
    <children>
-      <Button fx:id="edit_countries_btn" onAction="#edit_countries" mnemonicParsing="false" prefHeight="57.0" prefWidth="200.0" text="Edit Entries" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+      <Button fx:id="edit_countries_btn" mnemonicParsing="false" onAction="#editCountries" prefHeight="57.0" prefWidth="200.0" text="Edit Entries" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
             <Font size="27.0" />
          </font></Button>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
          <children>
-            <TextField>
+            <TextField fx:id="final_year">
                <font>
                   <Font size="30.0" />
                </font></TextField>
@@ -41,7 +39,7 @@
       </VBox>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
          <children>
-            <TextField>
+            <TextField fx:id="initial_year">
                <font>
                   <Font size="30.0" />
                </font>
@@ -60,12 +58,12 @@
          </font></Label>
       <HBox prefHeight="61.0" prefWidth="200.0" spacing="8.0" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.rowIndex="1">
          <children>
-            <TextField prefHeight="60.0" prefWidth="400.0" promptText="Country Name to Search">
+            <TextField fx:id="country_search_name" prefHeight="60.0" prefWidth="400.0" promptText="Country Name to Search">
                <font>
                   <Font size="28.0" />
                </font>
             </TextField>
-            <Button fx:id="select_att_btn" onAction="#select_atts" mnemonicParsing="false" prefHeight="60.0" prefWidth="310.0" text="Attributes to Search">
+            <Button fx:id="select_att_btn" mnemonicParsing="false" onAction="#selectAtts" prefHeight="60.0" prefWidth="310.0" text="Attributes to Search">
                <font>
                   <Font size="28.0" />
                </font>
@@ -73,7 +71,7 @@
                   <Insets left="5.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="search_btn" onAction="#perform_search" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Search">
+            <Button fx:id="search_btn" mnemonicParsing="false" onAction="#performSearch" prefHeight="60.0" prefWidth="200.0" text="Search">
                <font>
                   <Font size="28.0" />
                </font>
@@ -82,7 +80,7 @@
       </HBox>
       <HBox prefHeight="60.0" prefWidth="200.0" spacing="8.0" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
          <children>
-            <Button fx:id="compare_btn" mnemonicParsing="false" prefHeight="60.0" prefWidth="400.0" text="Compare Selected Countries" textAlignment="CENTER">
+            <Button fx:id="compare_btn" mnemonicParsing="false" onAction="#compareSelected" prefHeight="60.0" prefWidth="400.0" text="Compare Selected Countries" textAlignment="CENTER">
                <font>
                   <Font size="27.0" />
                </font>
@@ -90,7 +88,7 @@
                   <Insets right="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="view_editors_btn" onAction="#show_editors" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="View Editors" textAlignment="CENTER">
+            <Button fx:id="view_editors_btn" mnemonicParsing="false" onAction="#showEditors" prefHeight="60.0" prefWidth="200.0" text="View Editors" textAlignment="CENTER">
                <font>
                   <Font size="27.0" />
                </font>
@@ -98,7 +96,7 @@
                   <Insets right="35.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="del_selected_btn" onAction="#del_selected" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="Delete Selected" textAlignment="CENTER">
+            <Button fx:id="del_selected_btn" mnemonicParsing="false" onAction="#delSelected" prefHeight="60.0" prefWidth="250.0" text="Delete Selected" textAlignment="CENTER">
                <font>
                   <Font size="27.0" />
                </font>
@@ -108,7 +106,8 @@
             <Insets />
          </GridPane.margin>
       </HBox>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem Ipsum" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attributes Searching for:" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All (default)" GridPane.rowIndex="2" />
    </children>
    <padding>
       <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
