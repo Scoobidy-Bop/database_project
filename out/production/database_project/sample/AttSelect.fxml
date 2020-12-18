@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AttSelectController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select attributes to search for. Select none to search all attributes" textAlignment="CENTER" wrappingWidth="375.0">
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <ToggleButton id="mpc" fx:id="mpc" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Most Populous City">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="cap" fx:id="cap" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Country Capital">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="lnd" fx:id="lnd" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Total Land Mass">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="pop" fx:id="pop" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Population">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="lng" fx:id="lng" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Language">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="pde" fx:id="pde" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Population Density">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="gdp" fx:id="gdp" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="GDP">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="cur" fx:id="cur" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Currency">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="ppc" fx:id="ppc" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Power Consumption/Capita">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="pat" fx:id="pat" mnemonicParsing="false" prefHeight="60.0" prefWidth="350.0" text="Passenger Air Transport">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </ToggleButton>
+      <Button fx:id="confirm" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="Confirm Selection">
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</VBox>

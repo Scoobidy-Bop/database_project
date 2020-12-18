@@ -25,7 +25,7 @@
             <TextField fx:id="last_name" />
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#log_in" text="Log In">
+                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#logIn" text="Log In">
                      <HBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </HBox.margin></Button>
