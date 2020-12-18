@@ -57,6 +57,7 @@ public class SearchController {
             e.printStackTrace();
         }
     }
+  
 
     private void initItems() {
         edit_countries_btn = (Button) window.getScene().lookup("#edit_countries_btn");
@@ -72,11 +73,20 @@ public class SearchController {
         initial_year.setText(MIN_YEAR + "");
         final_year.setText(MAX_YEAR + "");
     }
-
-    //TODO: John, can you connect this button to your edit stage.
-    // The button shouldn't have any restrictions on when it can/can't open.
-    public void editCountries() {
-        System.out.println("Showing country attribute editor");
+  
+  
+    public void editCountries(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Edit.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Edit Country");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -226,10 +236,19 @@ public class SearchController {
         System.out.println("Showing all selected countries");
     }
 
-
+  
     public void showEditors() {
-        System.out.println("Showing table of editors");
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("editors.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 500, 300);
+            Stage stage = new Stage();
+            stage.setTitle("Edit Editors");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 

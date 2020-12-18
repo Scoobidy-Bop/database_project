@@ -13,7 +13,7 @@ INSERT INTO country VALUES
 ("KR", 1965, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1965, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1965, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1965, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1965, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1966, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1966, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1966, "Japan", "Tokyo", "Tokyo", 364560),
@@ -28,7 +28,7 @@ INSERT INTO country VALUES
 ("KR", 1966, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1966, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1966, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1966, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1966, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1967, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1967, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1967, "Japan", "Tokyo", "Tokyo", 364560),
@@ -43,7 +43,7 @@ INSERT INTO country VALUES
 ("KR", 1967, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1967, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1967, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1967, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1967, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1968, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1968, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1968, "Japan", "Tokyo", "Tokyo", 364560),
@@ -58,7 +58,7 @@ INSERT INTO country VALUES
 ("KR", 1968, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1968, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1968, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1968, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1968, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1969, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1969, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1969, "Japan", "Tokyo", "Tokyo", 364560),
@@ -73,7 +73,7 @@ INSERT INTO country VALUES
 ("KR", 1969, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1969, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1969, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1969, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1969, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1970, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1970, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1970, "Japan", "Tokyo", "Tokyo", 364560),
@@ -88,7 +88,7 @@ INSERT INTO country VALUES
 ("KR", 1970, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1970, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1970, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1970, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1970, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1971, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1971, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1971, "Japan", "Tokyo", "Tokyo", 364560),
@@ -103,7 +103,7 @@ INSERT INTO country VALUES
 ("KR", 1971, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1971, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1971, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1971, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1971, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1972, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1972, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1972, "Japan", "Tokyo", "Tokyo", 364560),
@@ -118,7 +118,7 @@ INSERT INTO country VALUES
 ("KR", 1972, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1972, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1972, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1972, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1972, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1973, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1973, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1973, "Japan", "Tokyo", "Tokyo", 364560),
@@ -133,7 +133,7 @@ INSERT INTO country VALUES
 ("KR", 1973, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1973, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1973, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1973, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1973, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1974, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1974, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1974, "Japan", "Tokyo", "Tokyo", 364560),
@@ -148,7 +148,7 @@ INSERT INTO country VALUES
 ("KR", 1974, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1974, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1974, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1974, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1974, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1975, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1975, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1975, "Japan", "Tokyo", "Tokyo", 364560),
@@ -163,7 +163,7 @@ INSERT INTO country VALUES
 ("KR", 1975, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1975, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1975, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1975, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1975, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1976, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1976, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1976, "Japan", "Tokyo", "Tokyo", 364560),
@@ -178,7 +178,7 @@ INSERT INTO country VALUES
 ("KR", 1976, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1976, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1976, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1976, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1976, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1977, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1977, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1977, "Japan", "Tokyo", "Tokyo", 364560),
@@ -193,7 +193,7 @@ INSERT INTO country VALUES
 ("KR", 1977, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1977, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1977, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1977, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1977, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1978, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1978, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1978, "Japan", "Tokyo", "Tokyo", 364560),
@@ -208,7 +208,7 @@ INSERT INTO country VALUES
 ("KR", 1978, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1978, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1978, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1978, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1978, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1979, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1979, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1979, "Japan", "Tokyo", "Tokyo", 364560),
@@ -223,7 +223,7 @@ INSERT INTO country VALUES
 ("KR", 1979, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1979, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1979, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1979, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1979, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1980, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1980, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1980, "Japan", "Tokyo", "Tokyo", 364560),
@@ -238,7 +238,7 @@ INSERT INTO country VALUES
 ("KR", 1980, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1980, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1980, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1980, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1980, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1981, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1981, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1981, "Japan", "Tokyo", "Tokyo", 364560),
@@ -253,7 +253,7 @@ INSERT INTO country VALUES
 ("KR", 1981, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1981, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1981, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1981, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1981, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1982, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1982, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1982, "Japan", "Tokyo", "Tokyo", 364560),
@@ -268,7 +268,7 @@ INSERT INTO country VALUES
 ("KR", 1982, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1982, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1982, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1982, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1982, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1983, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1983, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1983, "Japan", "Tokyo", "Tokyo", 364560),
@@ -283,7 +283,7 @@ INSERT INTO country VALUES
 ("KR", 1983, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1983, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1983, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1983, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1983, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1984, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1984, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1984, "Japan", "Tokyo", "Tokyo", 364560),
@@ -298,7 +298,7 @@ INSERT INTO country VALUES
 ("KR", 1984, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1984, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1984, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1984, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1984, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1985, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1985, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1985, "Japan", "Tokyo", "Tokyo", 364560),
@@ -313,7 +313,7 @@ INSERT INTO country VALUES
 ("KR", 1985, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1985, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1985, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1985, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1985, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1986, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1986, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1986, "Japan", "Tokyo", "Tokyo", 364560),
@@ -328,7 +328,7 @@ INSERT INTO country VALUES
 ("KR", 1986, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1986, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1986, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1986, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1986, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1987, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1987, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1987, "Japan", "Tokyo", "Tokyo", 364560),
@@ -343,7 +343,7 @@ INSERT INTO country VALUES
 ("KR", 1987, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1987, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1987, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1987, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1987, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1988, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1988, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1988, "Japan", "Tokyo", "Tokyo", 364560),
@@ -358,7 +358,7 @@ INSERT INTO country VALUES
 ("KR", 1988, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1988, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1988, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1988, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1988, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1989, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1989, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1989, "Japan", "Tokyo", "Tokyo", 364560),
@@ -373,7 +373,7 @@ INSERT INTO country VALUES
 ("KR", 1989, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1989, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1989, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1989, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1989, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1990, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1990, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1990, "Japan", "Tokyo", "Tokyo", 364560),
@@ -388,7 +388,7 @@ INSERT INTO country VALUES
 ("KR", 1990, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1990, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1990, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1990, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1990, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1991, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1991, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1991, "Japan", "Tokyo", "Tokyo", 364560),
@@ -403,7 +403,7 @@ INSERT INTO country VALUES
 ("KR", 1991, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1991, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1991, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1991, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1991, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1992, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1992, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1992, "Japan", "Tokyo", "Tokyo", 364560),
@@ -418,7 +418,7 @@ INSERT INTO country VALUES
 ("KR", 1992, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1992, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1992, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1992, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1992, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1993, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1993, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1993, "Japan", "Tokyo", "Tokyo", 364560),
@@ -433,7 +433,7 @@ INSERT INTO country VALUES
 ("KR", 1993, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1993, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1993, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1993, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1993, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1994, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1994, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1994, "Japan", "Tokyo", "Tokyo", 364560),
@@ -448,7 +448,7 @@ INSERT INTO country VALUES
 ("KR", 1994, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1994, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1994, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1994, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1994, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1995, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1995, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1995, "Japan", "Tokyo", "Tokyo", 364560),
@@ -463,7 +463,7 @@ INSERT INTO country VALUES
 ("KR", 1995, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1995, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1995, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1995, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1995, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1996, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1996, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1996, "Japan", "Tokyo", "Tokyo", 364560),
@@ -478,7 +478,7 @@ INSERT INTO country VALUES
 ("KR", 1996, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1996, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1996, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1996, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1996, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1997, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1997, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1997, "Japan", "Tokyo", "Tokyo", 364560),
@@ -493,7 +493,7 @@ INSERT INTO country VALUES
 ("KR", 1997, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1997, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1997, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1997, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1997, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1998, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1998, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1998, "Japan", "Tokyo", "Tokyo", 364560),
@@ -508,7 +508,7 @@ INSERT INTO country VALUES
 ("KR", 1998, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1998, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1998, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1998, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1998, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 1999, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 1999, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 1999, "Japan", "Tokyo", "Tokyo", 364560),
@@ -523,7 +523,7 @@ INSERT INTO country VALUES
 ("KR", 1999, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 1999, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 1999, "Spain", "Madrid", "Madrid", 499564),
-("MX", 1999, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 1999, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2000, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2000, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2000, "Japan", "Tokyo", "Tokyo", 364560),
@@ -538,7 +538,7 @@ INSERT INTO country VALUES
 ("KR", 2000, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2000, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2000, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2000, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2000, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2001, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2001, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2001, "Japan", "Tokyo", "Tokyo", 364560),
@@ -553,7 +553,7 @@ INSERT INTO country VALUES
 ("KR", 2001, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2001, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2001, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2001, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2001, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2002, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2002, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2002, "Japan", "Tokyo", "Tokyo", 364560),
@@ -568,7 +568,7 @@ INSERT INTO country VALUES
 ("KR", 2002, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2002, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2002, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2002, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2002, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2003, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2003, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2003, "Japan", "Tokyo", "Tokyo", 364560),
@@ -583,7 +583,7 @@ INSERT INTO country VALUES
 ("KR", 2003, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2003, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2003, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2003, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2003, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2004, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2004, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2004, "Japan", "Tokyo", "Tokyo", 364560),
@@ -598,7 +598,7 @@ INSERT INTO country VALUES
 ("KR", 2004, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2004, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2004, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2004, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2004, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2005, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2005, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2005, "Japan", "Tokyo", "Tokyo", 364560),
@@ -613,7 +613,7 @@ INSERT INTO country VALUES
 ("KR", 2005, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2005, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2005, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2005, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2005, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2006, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2006, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2006, "Japan", "Tokyo", "Tokyo", 364560),
@@ -628,7 +628,7 @@ INSERT INTO country VALUES
 ("KR", 2006, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2006, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2006, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2006, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2006, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2007, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2007, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2007, "Japan", "Tokyo", "Tokyo", 364560),
@@ -643,7 +643,7 @@ INSERT INTO country VALUES
 ("KR", 2007, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2007, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2007, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2007, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2007, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2008, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2008, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2008, "Japan", "Tokyo", "Tokyo", 364560),
@@ -658,7 +658,7 @@ INSERT INTO country VALUES
 ("KR", 2008, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2008, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2008, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2008, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2008, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2009, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2009, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2009, "Japan", "Tokyo", "Tokyo", 364560),
@@ -673,7 +673,7 @@ INSERT INTO country VALUES
 ("KR", 2009, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2009, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2009, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2009, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2009, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2010, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2010, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2010, "Japan", "Tokyo", "Tokyo", 364560),
@@ -688,7 +688,7 @@ INSERT INTO country VALUES
 ("KR", 2010, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2010, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2010, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2010, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2010, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2011, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2011, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2011, "Japan", "Tokyo", "Tokyo", 364560),
@@ -703,7 +703,7 @@ INSERT INTO country VALUES
 ("KR", 2011, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2011, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2011, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2011, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2011, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2012, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2012, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2012, "Japan", "Tokyo", "Tokyo", 364560),
@@ -718,7 +718,7 @@ INSERT INTO country VALUES
 ("KR", 2012, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2012, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2012, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2012, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2012, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2013, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2013, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2013, "Japan", "Tokyo", "Tokyo", 364560),
@@ -733,7 +733,7 @@ INSERT INTO country VALUES
 ("KR", 2013, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2013, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2013, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2013, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2013, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2014, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2014, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2014, "Japan", "Tokyo", "Tokyo", 364560),
@@ -748,7 +748,7 @@ INSERT INTO country VALUES
 ("KR", 2014, "South Korea", "Seoul", "Seoul", 100210),
 ("AU", 2014, "Australia", "Sydney", "Canberra", 7692020),
 ("ES", 2014, "Spain", "Madrid", "Madrid", 499564),
-("MX", 2014, "Mexico", "Mexico City", "Mexico City", 1943950);
+("MX", 2014, "Mexico", "Mexico City", "Mexico City", 1943950),
 ("US", 2015, "United States", "New York City", "Washington D.C.", 9147420),
 ("CN", 2015, "China", "Shanghai", "Beijing", 9388211),
 ("JP", 2015, "Japan", "Tokyo", "Tokyo", 364560),
