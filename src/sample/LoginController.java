@@ -1,3 +1,7 @@
+/*
+this file is the controller for the login window
+ */
+
 package sample;
 
 import javafx.fxml.FXMLLoader;
@@ -15,9 +19,11 @@ import java.sql.ResultSet;
 
 public class LoginController {
 
+    // boolean for if the user is an editor or not
     private boolean editor;
     static private Stage window;
 
+    // the two textfields for the user input
     public TextField first_name;
     public TextField last_name;
 
@@ -30,7 +36,7 @@ public class LoginController {
         window.show();
     }
 
-
+    // this function gets the name and then checks if it is the editor, it then calls to open the next window
     public void logIn() throws Exception {
         boolean ret = isName(first_name, last_name);
         if (ret) {
@@ -48,14 +54,14 @@ public class LoginController {
         }
     }
 
-
+    // this function gets the text from the text field and checks that they are actual names
     private boolean isName(TextField first, TextField last) {
         String first_name = first.getText();
         String last_name = last.getText();
         return first_name.matches("[a-zA-Z]+") && last_name.matches("[a-zA-Z]+");
     }
 
-
+    // this function calls the database to check if the input name is an editor
     private boolean isEditor(String first, String last) throws Exception{
         /*
             We could not figure out config file at this point in time, so we had to hard coded the login info into a
@@ -85,7 +91,7 @@ public class LoginController {
         return false;
     }
 
-
+    // this function shutsdown this window and opens the next window
     public void shutdown() {
         SearchController sc = new SearchController();
         sc.initialize(editor);
