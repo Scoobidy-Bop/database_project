@@ -1,3 +1,7 @@
+/*
+this class if the controller for the edit editors window
+ */
+
 package sample;
 
 import javafx.fxml.FXMLLoader;
@@ -10,30 +14,36 @@ import javafx.stage.Stage;
 import javax.swing.table.TableColumn;
 import java.sql.*;
 
+// this class is the main driver for the class
 public class EditorController {
 
     private static Stage window;
 
+    // variables needed for the connection and statements
     Connection conn;
     Statement st;
     PreparedStatement preparedStatement;
 
+    // textfields for the names
     public TextField firstName;
     public TextField lastName;
 
+    // the buttons the user presses
     public Button cancel_button;
     public Button add_button;
     public Button delete_button;
 
+    // this function is called when the user presses the cancel button and the window closes
     public void cancelAction(){
         Stage stage = (Stage) cancel_button.getScene().getWindow();
         stage.close();
     }
 
+    // this function is called when the user presses the add button for adding the editor to the database
     public void addAction(){
+        // gets the connection
         getConnection();
-        System.out.println("button pressed");
-        if(!checkNamesExist()){
+        if(!checkNamesExist()){ // checks if the name exists in database, if not then adds editor
             System.out.println("adding editor " + getFirstName() + ", " + getLastName());
             addEditor();
         }
@@ -44,12 +54,13 @@ public class EditorController {
         }
     }
 
+    // this function is called when the user pushes the delete button
     public void deleteAction(){
+        // asks if the user really wants to delete the entry
         boolean ans = PopUp.init_confirm("WARNING", "Are you sure you want delete this editor if exists?");
         if (ans) {
-            System.out.println("Deleted selected countries");
-            getConnection();
-            if (checkNamesExist()) {
+            getConnection(); // gets connection
+            if (checkNamesExist()) { // check if it exists, if it does it deletess
                 deleteEditor();
             }
             try {
@@ -60,6 +71,7 @@ public class EditorController {
         }
     }
 
+    // this function creates the statement and deletes the name from the database
     public void deleteEditor(){
         String deleteStatement = "DELETE FROM editor WHERE first_name = ? AND last_name = ?";
         try {
@@ -73,6 +85,7 @@ public class EditorController {
         }
     }
 
+    // this function creates the statement to insert the name into the database
     public void addEditor(){
         String query = "INSERT INTO editor VALUES (?, ?)";
         try {
@@ -87,6 +100,7 @@ public class EditorController {
         }
     }
 
+    // this function checks if the name actually exists in the database
     public boolean checkNamesExist(){
         boolean doesExist = false;
         String query = "SELECT * FROM editor WHERE first_name = ? AND last_name = ?";
@@ -105,12 +119,13 @@ public class EditorController {
         return doesExist;
     }
 
+    // checks if the name is entered in correct characters
     private boolean isName(String name) {
         return name.matches("[a-zA-Z]+");
     }
 
+    // getters for the first and last name user entered
     public String getFirstName(){
-
         return firstName.getText();
     }
 
@@ -118,6 +133,7 @@ public class EditorController {
         return lastName.getText();
     }
 
+    // this function gets the connection to the database
     public void getConnection(){
         try {
             String[] creds = GetSQLInfo.getCredentials();

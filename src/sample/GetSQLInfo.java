@@ -21,47 +21,6 @@ public class GetSQLInfo {
         return "jdbc:mysql://" + domain + "/" + db + settings;
     }
 
-    public static String idToTitle(String id) {
-        String name;
-        switch (id) {
-            case "mpc":
-                name = "c.most_populous_city";
-                break;
-            case "cap":
-                name = "c.capital";
-                break;
-            case "lnd":
-                name = "c.land_mass";
-                break;
-            case "pop":
-                name = "cp.pop_size";
-                break;
-            case "lng":
-                name = "cp.language";
-                break;
-            case "pde":
-                name = "cp.pop_density";
-                break;
-            case "gdp":
-                name = "e.gdp";
-                break;
-            case "cur":
-                name = "e.currency";
-                break;
-            case "ppc":
-                name = "e.power_consumption_per_capita";
-                break;
-            case "pat":
-                name = "e.passenger_air_transport";
-                break;
-            default:
-                PopUp.init_error("ERROR: Invalid attribute ID passed to search!\nSearch aborted!");
-                name = null;
-        }
-        return name;
-    }
-
-
     private static String getDomain() {
         return domain;
     }
