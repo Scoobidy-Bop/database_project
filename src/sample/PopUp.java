@@ -1,3 +1,7 @@
+/*
+ this file is for a pop up window
+ */
+
 package sample;
 
 import javafx.geometry.Insets;
@@ -12,8 +16,10 @@ import javax.swing.*;
 
 public class PopUp {
 
+    // the answer the user has given
     static boolean answer;
 
+    // init for confirm pop-up window
     public static boolean init_confirm(String title, String message) {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
@@ -50,6 +56,7 @@ public class PopUp {
         return answer;
     }
 
+    // initializer for the error pop up
     public static void init_error(String message) {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
@@ -58,9 +65,11 @@ public class PopUp {
         Label label = new Label();
         label.setText(message);
         label.setWrapText(true);
-        label.setPadding(new Insets(15));
+        label.setPadding(new Insets(15,15,15,15));
 
+        //Two Buttons
         Button ok_button = new Button("ok");
+
         ok_button.setOnAction(e -> {
             answer = true;
             window.close();

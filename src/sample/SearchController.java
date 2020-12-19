@@ -93,7 +93,7 @@ public class SearchController {
             e.printStackTrace();
         }
     }
-  
+    // this function is called when the user presses the edit countries button and loads the new window
     public void editCountries(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -446,6 +446,7 @@ public class SearchController {
         System.out.println("Creating Table of compared countries");
     }
   
+    // this function executes when the user presses the edit editors button and calls the editors window
     public void showEditors() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();

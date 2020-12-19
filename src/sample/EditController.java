@@ -1,3 +1,7 @@
+/*
+    This file is the controller for the edit country window.
+ */
+
 package sample;
 
 import javafx.fxml.FXMLLoader;
@@ -11,9 +15,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
-
+/*
+This class is the main driver for the window
+ */
 public class EditController {
 
+    // all these textfields in the window to get the user entry
     public TextField abbr;
     public TextField country_name;
     public TextField year;
@@ -28,51 +35,39 @@ public class EditController {
     public TextField pwr_consumption;
     public TextField transport;
 
+    // the buttons for confirm and cancel
     public Button confirmButton;
     public Button cancelButton;
 
-
     private static Stage window;
 
+    // the variables needed for the connection and statements
     Connection conn;
     Statement st;
     PreparedStatement pst;
 
-    // don't use
-    private void initItems() {
-        abbr = (TextField) window.getScene().lookup("#abbr");
-        country_name = (TextField) window.getScene().lookup("#country_name");
-        year = (TextField) window.getScene().lookup("#year");
-        pop_city = (TextField) window.getScene().lookup("#pop_city");
-        capital = (TextField) window.getScene().lookup("#capital");
-        landmass = (TextField) window.getScene().lookup("#landmass");
-        population = (TextField) window.getScene().lookup("#population");
-        language = (TextField) window.getScene().lookup("#language");
-        pop_density = (TextField) window.getScene().lookup("#po_density");
-        gdp = (TextField) window.getScene().lookup("#gdp");
-        currency = (TextField) window.getScene().lookup("#currency");
-        pwr_consumption = (TextField) window.getScene().lookup("#pwr_consumption");
-        transport = (TextField) window.getScene().lookup("#transport");
-        confirmButton = (Button) window.getScene().lookup("#confirmButton");
-        cancelButton = (Button) window.getScene().lookup("#cancelButton");
-    }
-
+    // called when the user presses the confirm button
     public void confirmPressed(){
-        getConnection();
-        if (countryExists()) {
-            editCountry();
-        } else {
-            addNewCountry();
+        if(checkFilled()) { // checks all textfields filled in
+            getConnection();
+            if (countryExists()) { // checks if the country exists
+                editCountry(); // if it does then it updates the country
+            } else {
+                addNewCountry(); // if it doesn't it adds it
+            }
+            try { // closes connection
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            cancelPressed(); // calls this method to close the window
         }
-        try{
-            conn.close();
-        } catch (Exception e){
-            e.printStackTrace();
+        else {
+            PopUp.init_error("ERROR: Please enter all values");
         }
-        cancelPressed();
-
     }
 
+    // this function is for when the user presses the cancel button and the window closes
     public void cancelPressed(){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
@@ -80,6 +75,7 @@ public class EditController {
 
     // if country doesn't exists, adds new country
     public void addNewCountry(){
+        // all insert statements
         String insert = "INSERT INTO country VALUES (?, ?, ?, ?, ?, ?)";
         String insertPop = "INSERT INTO country_population VALUES (?, ?, ?, ?, ?)";
         String insertEcon = "INSERT INTO economy VALUES (?, ?, ?, ? ,?, ?)";
@@ -181,6 +177,7 @@ public class EditController {
         return doesExist;
     }
 
+    // this function gets the connection to the database with the credentials
     public void getConnection(){
         try {
             String[] creds = GetSQLInfo.getCredentials();
@@ -193,6 +190,18 @@ public class EditController {
         }
     }
 
+    // this function checks if the textboxes are filled in by user
+    public boolean checkFilled(){
+        if(getAbbr().length() > 0 && getCountryName().length() > 0 && year.getText().length() > 0 &&
+                getPop_City().length() > 0 && getCapital().length() > 0 && landmass.getText().length() > 0 &&
+                population.getText().length() > 0 && getLanguage().length() > 0 && pop_density.getText().length() > 0
+                && gdp.getText().length() > 0 && getCurrency().length() > 0 && pwr_consumption.getText().length() > 0 && transport.getText().length() > 0){
+            return  true;
+        }
+        return  false;
+    }
+
+    // getter functions to get the values to add to database
     public String getAbbr(){
         return abbr.getText();
     }
