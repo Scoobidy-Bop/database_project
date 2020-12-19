@@ -4,14 +4,10 @@ this class if the controller for the edit editors window
 
 package sample;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.swing.table.TableColumn;
 import java.sql.*;
 
 // this class is the main driver for the class
@@ -20,8 +16,8 @@ public class EditorController {
     private static Stage window;
 
     // variables needed for the connection and statements
+
     Connection conn;
-    Statement st;
     PreparedStatement preparedStatement;
 
     // textfields for the names
@@ -46,6 +42,8 @@ public class EditorController {
         if(!checkNamesExist()){ // checks if the name exists in database, if not then adds editor
             System.out.println("adding editor " + getFirstName() + ", " + getLastName());
             addEditor();
+        } else {
+            PopUp.init_error("ATTENTION: " + getFirstName() + " " + getLastName() + " is already registered as an editor");
         }
         try {
             conn.close();
@@ -59,6 +57,7 @@ public class EditorController {
         // asks if the user really wants to delete the entry
         boolean ans = PopUp.init_confirm("WARNING", "Are you sure you want delete this editor if exists?");
         if (ans) {
+            System.out.println("Deleted editor");
             getConnection(); // gets connection
             if (checkNamesExist()) { // check if it exists, if it does it deletess
                 deleteEditor();
