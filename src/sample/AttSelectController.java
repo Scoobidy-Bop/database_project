@@ -1,4 +1,8 @@
 package sample;
+/**
+ * Primary Controller for the Attribute selector screen. Allows the user to specify which Country
+ * attributes that they want to search for. If none are selected, then all attributes will be searched.
+ */
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,10 +30,18 @@ public class AttSelectController {
     public ToggleButton ppc;
     public ToggleButton pat;
 
+    // List of all buttons on screen
     public List<String> btn_names = new ArrayList<>();
 
+    // Button to confirm selected atts
     public Button confirm;
 
+    /**
+     * Set up the Screen, and all necessary functions
+     *
+     * @param atts A list of attributes that the caller Screen uses to check what to search for
+     * @param sc the caller Screen passes itself so that the Attribute Selector can pass info back
+     */
     public void initialize(List<String> atts, SearchController sc) {
         try {
             window = new Stage();
@@ -46,7 +58,9 @@ public class AttSelectController {
             initItems();
             window.show();
 
+            // Check that there are not already any attributes selected
             if (atts.size() > 0) {
+                // Itterate through all IDs and toggle selected attribute buttons to true
                 for (String att : atts) {
                     String tmp = "#" + att;
                     ToggleButton btn = (ToggleButton) attributes.lookup(tmp);
@@ -56,6 +70,8 @@ public class AttSelectController {
 
             confirm.setOnAction(e -> {
                 getSelected(atts);
+
+                // we were given the caller screen, so run a storeSelected to update atts searched for
                 sc.storeSelected();
                 window.close();
 
@@ -66,11 +82,20 @@ public class AttSelectController {
         }
     }
 
+    /**
+     * Update the list of selected attributes based on what toggleButtons are pressed upon confirm
+     * button being pressed.
+     *
+     * @param atts the list of attributes passed to initializer is passed again for access
+     */
     public void getSelected(List<String> atts) {
         for (String btn_name : btn_names) {
+
+            // Create a string of the button id
             String tmp = "#" + btn_name;
             ToggleButton btn = (ToggleButton) window.getScene().lookup(tmp);
 
+            // Check toggle
             if (btn.isSelected() && !atts.contains(btn.getId())) {
                 atts.add(btn.getId());
             } else if (atts.contains(btn.getId()) && !btn.isSelected()) {
@@ -79,6 +104,9 @@ public class AttSelectController {
         }
     }
 
+    /**
+     * Initialize all buttons and items on screen so they can be accessed programmatically.
+     */
     public void initItems() {
         confirm = (Button) window.getScene().lookup("#confirm");
 

@@ -11,7 +11,11 @@ public class Main extends Application {
         lc.initialize(primaryStage);
     }
 
-
+    /**
+     * Universal Stage settings that can be called to save repetition of code
+     *
+     * @param window - the window in which the following settings will be applied to
+     */
     public static void stage_settings(Stage window) {
         window.setTitle("Country Comparator");
         window.setResizable(false);

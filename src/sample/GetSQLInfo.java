@@ -1,5 +1,9 @@
 package sample;
 
+/**
+ * File for getting access to the database to access the sql data stored remotely
+ */
+
 public class GetSQLInfo {
 
     private final static String domain = "cps-database.gonzaga.edu";
@@ -8,7 +12,11 @@ public class GetSQLInfo {
     private final static String database = "nkirsch_DB";
     private final static String settings = "?serverTimezone=UTC";
 
-
+    /**
+     * Get the username and password for logging into the database
+     *
+     * @return - String array of the username in 0, and the password in 1
+     */
     public static String[] getCredentials() {
         String[] creds = new String[2];
         creds[0] = getUsername();
@@ -16,11 +24,23 @@ public class GetSQLInfo {
         return creds;
     }
 
+    /**
+     * Concatenates a url string based on the settings info, database being used, and the domain the server
+     * exists on.
+     *
+     * @return - url String to create a Connection
+     */
     public static String getUrlConnect() {
         String domain = getDomain(), db = getDatabase(), settings = getSettings();
         return "jdbc:mysql://" + domain + "/" + db + settings;
     }
 
+    /**
+     * A button's id is passed in, and the appropriate column name is returned
+     *
+     * @param id the button id being requeted
+     * @return the column name associated with that id
+     */
     public static String idToTitle(String id) {
         String name;
         switch (id) {

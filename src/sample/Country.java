@@ -1,4 +1,8 @@
 package sample;
+/**
+ * This class acts as a helper Object for TableViews and Lists. Contains all attributes and a Checkbox
+ */
+
 
 import javafx.beans.property.*;
 import javafx.scene.control.CheckBox;

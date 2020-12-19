@@ -1,7 +1,10 @@
 package sample;
 
-import com.mysql.cj.xdevapi.Table;
-import javafx.beans.property.*;
+/**
+ * This is the primary instance of the application. This screen is presented after logging in, and acts
+ * as the primary hub for all application functionality.
+ */
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -22,8 +25,8 @@ import java.util.List;
 public class SearchController {
 
     private static Stage window;
-    private final int MIN_YEAR = 1965;
-    private final int MAX_YEAR = 2015;
+    private int MIN_YEAR = 1965;
+    private int MAX_YEAR = 2015;
 
 
     public Button edit_countries_btn;
@@ -37,12 +40,20 @@ public class SearchController {
     public ScrollPane results_pane;
     public GridPane container;
 
+    // List for tracking all of the selected Country/Years
     public List<Country> compared = new ArrayList<>();
+
+    // List for determining which items are selected soley on the current search
     public List<Country> selected;
 
-    private List<String> search_atts = new ArrayList<>();
+    // List of search attributes based on the Attribute Selector
+    private final List<String> search_atts = new ArrayList<>();
 
-
+    /**
+     * Initialize Search Screen and it's associated buttons and items
+     *
+     * @param editor_val
+     */
     public void initialize(Boolean editor_val) {
         try {
             window = new Stage();
@@ -51,6 +62,9 @@ public class SearchController {
             window.setScene(search_scene);
             Main.stage_settings(window);
             initItems();
+
+            // Based on the editor_val calulcated when logging in, if the user is not an editor
+            // then remove the following buttons from their display
             if (!editor_val) {
                 edit_countries_btn.setVisible(false);
                 del_selected_btn.setVisible(false);
@@ -61,8 +75,10 @@ public class SearchController {
             e.printStackTrace();
         }
     }
-  
 
+    /**
+     * Initialize the items on screen to be accessed programmatically
+     */
     private void initItems() {
         edit_countries_btn = (Button) window.getScene().lookup("#edit_countries_btn");
         del_selected_btn = (Button) window.getScene().lookup("#del_selected_btn");
@@ -74,11 +90,18 @@ public class SearchController {
         results_pane.setVisible(false);
         container = (GridPane) window.getScene().lookup("#container");
 
+        // Set the min/max years as default search parameters
         initial_year.setText(MIN_YEAR + "");
         final_year.setText(MAX_YEAR + "");
+
+        // Clean out the compare table so no data carries over from last application runs
         cleanCompare();
     }
 
+    /**
+     * cleanCompare deletes everything from the compare table, so that all data added to it are only from
+     * the current app instance
+     */
     private void cleanCompare() {
         String[] creds = GetSQLInfo.getCredentials();
         String usr = creds[0];
@@ -108,16 +131,24 @@ public class SearchController {
         }
     }
 
-
+    /**
+     * Opens the Attribute Selector Screen so the user can select what attributes to search with their countries
+     */
     public void selectAtts() {
         AttSelectController asc = new AttSelectController();
         asc.initialize(search_atts, this);
     }
 
+    /**
+     * store Selected gets called from the Attribute Selector as a signal to update the Search Screen to display
+     * the attributes that the user has selected
+     */
     public void storeSelected() {
+        // Check if no attributes are selected. Default to searching all attributes
         if (search_atts.size() < 1) {
             atts_label.setText("All Attributes (Default)");
         } else {
+            // Create a String based on selected attributes to display on screen
             String search = "";
             for (String att : search_atts) {
                 search = search.concat(att);
@@ -129,30 +160,52 @@ public class SearchController {
         }
     }
 
+    /**
+     * Activates when the user presses search button. Performs a vast number of operations to display the
+     * get, and display the results to a table
+     */
     public void performSearch() {
+        //Create a new instance of the selected List for every search, as we don't want to delete any items
+        // from a previous search
         selected = new ArrayList<>();
-        TableView<Country> table_view = new TableView<>();
 
+        // The table that we are going to populate
+        TableView<Country> table_view = new TableView<>();
         table_view.setMaxHeight(450);
+
+        // Get the search parameters that the user entered
         String country = country_search_name.getText();
         String init_year = initial_year.getText();
         String fin_year = final_year.getText();
+
+        // Validate that the entered information is legal
         boolean ret = validateSearch(country, init_year, fin_year);
         if (ret) {
+            // Create the query to search. We must create the select clause dynamically
+            // attToSQL is called to convert the List of attribute IDs selected into the appropriate column names
             String sql_select = attToSQL();
             String q = "SELECT " + sql_select + " FROM country c" +
                     " JOIN country_population cp USING (year, abbr)" +
                     " JOIN economy e USING (year, abbr)" + " WHERE  c.year >= " + init_year +
                     " AND c.year <= " + fin_year + " AND c.country_name = ?" +
                     " ORDER BY year ASC;";
+            // The query, table, and country the user entered are passed to create the table
             getStoreData(q, country, table_view);
+
+            // The completed table is placed inside the hidden ScrollPane and displayed
             Parent root = table_view;
             results_pane.setContent(root);
             results_pane.setVisible(true);
         }
     }
 
-
+    /**
+     * getStoreData retrieves searched data from the database and stores it to the table that is displayed on screen
+     *
+     * @param q the query string is passed in missing only the country name to search using prepared statements
+     * @param search_country the country the user wants to search for is passed in to be placed in a prepared statement
+     * @param table_view the table we will be populating with data found
+     */
     public void getStoreData(String q, String search_country, TableView<Country> table_view) {
         String[] creds = GetSQLInfo.getCredentials();
         String usr = creds[0];
@@ -165,47 +218,66 @@ public class SearchController {
             ResultSet rs = p_stmt.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int cols = rsmd.getColumnCount();
+
+            // Boolean flag is used to determine if the user is searching for a specific attribute or not
+            // This is needed because otherwise the table will try to read data from columns that don't exist
+            // in the query
             boolean flag = false;
 
+            // A list of countries is created to represent every row of the query
             ArrayList<Country> data = new ArrayList<>();
             while (rs.next()) {
                 Country country = new Country();
 
-                // year, abbr, and country_name will always be searched
+                // year, abbr, and country_name will always be searched by default
                 CheckBox cb = new CheckBox();
                 country.setSelect(cb);
                 country.year.set(rs.getInt("year"));
                 country.abbr.set(rs.getString("abbr"));
                 country.country_name.set(rs.getString("country_name"));
 
+                // We need to check if any countries has been previously selected for comparison
+                // or has been saved to the compare table. If so, mark the checkbox as selected
                 if (checkCompare(country)) {
                     country.select.setSelected(true);
                     selected.add(country);
-                    System.out.println(selected.toString());
                 }
 
                 cb.selectedProperty().addListener(new ChangeListener<Boolean>() {
+                    /**
+                     * Checkbox is given a state change listener. When the country/year is selected (checked)
+                     * we want that info to be sent and stored in the compare table so it is remembered through
+                     * searches. If it is unchecked, then we need to remove that info from the compare table
+                     *
+                     * @param observable Not used
+                     * @param oldValue the value that the checkbox was
+                     * @param newValue the value that the checkbox now is
+                     */
                     @Override
                     public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                         String[] creds = GetSQLInfo.getCredentials();
                         String usr = creds[0];
                         String pwd = creds[1];
                         String url = GetSQLInfo.getUrlConnect();
-
                         try (Connection cn = DriverManager.getConnection(url, usr, pwd)) {
+                            // The way that this listener was implemented is by far not the most efficient,
+                            // nor the best way to do this task. I would have liked to make the program run faster
+                            // and less expensively by not adding removing everytime the checkbox is checked/unchecked
+                            // but I simply didn't have time.
+                            // In the code below I believe I tried to go for two different approaches unnecessarily
                             if (newValue) {
+                                //The check box is selected
                                 if (!compared.contains(country)) {
                                     compared.add(country);
                                     addToCompare(country, cn);
                                     selected.add(country);
-                                    System.out.println(selected.toString());
                                 }
                             } else {
+                                // The checkbox is not selected
                                 if (compared.contains(country)) {
                                     compared.remove(country);
                                     removeFromCompare(country, cn);
                                     selected.remove(country);
-                                    System.out.println(selected.toString());
                                 }
                             }
                         } catch (SQLException throwables) {
@@ -213,6 +285,10 @@ public class SearchController {
                         }
                     }
                 });
+
+                /**
+                 * Check all of the optional attributes to ensure we don't try to read non-existent data
+                 */
 
                 // Check if most_populous_city is being searched for
                 for (int i = 1; i < cols; i++)
@@ -322,15 +398,20 @@ public class SearchController {
                 else
                     country.passenger_air_transport.set(0);
 
+
+                // After all data vaules are set, then the country is added to the list of rows (Countries)
                 data.add(country);
             }
 
+            //the country list is converted into an ObservableList
             ObservableList dbData = FXCollections.observableArrayList(data);
 
-
+            // The checkbox column is created individually since it is not part of the query results
             TableColumn check_col = new TableColumn<>();
             check_col.setText("Selected");
             check_col.setCellValueFactory(new PropertyValueFactory<>("select"));
+
+            // Column is added to the table
             table_view.getColumns().add(check_col);
 
 
@@ -381,21 +462,30 @@ public class SearchController {
                         col.setText(rs.getMetaData().getColumnName(i+1));
                         break;
                 }
+                // Set the tag of each column and then add to table
                 col.setCellValueFactory(new PropertyValueFactory<>(rs.getMetaData().getColumnName(i+1)));
                 table_view.getColumns().add(col);
             }
 
-            // Fill table_view with the data
+            // Fill table_view with the columns
             table_view.setItems(dbData);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Converts the global list of attributes into a String of the associated attribute column names
+     *
+     * @return string of every column name being selected to be added to the main SELECT query
+     */
     public String attToSQL() {
+
+        // If the user selected no attributes, we will search for every attribute
         if (search_atts.size() < 1) {
             return "*";
         }
+        // The SELECT clause always searches for these 3 attributes withour exception
         String sql_select = "c.year, c.abbr, c.country_name, ";
         for (int i = 0; i < search_atts.size(); i++) {
             String tmp = search_atts.get(i);
@@ -408,7 +498,18 @@ public class SearchController {
         return sql_select;
     }
 
-
+    /**
+     * Simple validator to check that the input the user has entered is valid and searchable. Checks that
+     *  - Dates are sequentially in order
+     *  - Dates do not exceed the max year or the min year
+     *  - The country named is only alphabetic
+     *  If one of the conditions fails, a PopUp appears informing of the error
+     *
+     * @param co the country name to search
+     * @param iy the initial year
+     * @param fy the final year
+     * @return boolean on if the search is legal or not
+     */
     private boolean validateSearch(String co, String iy, String fy) {
         if (iy.isEmpty()) {
             PopUp.init_error("INVALID ENTRY:\nMissing initial year");
@@ -427,11 +528,11 @@ public class SearchController {
             if (intFY - intIY < 0) {
                 PopUp.init_error("INVALID ENTRY:\nFinal year cannot be earlier than initial year");
                 return false;
-            } if (intFY > 2015) {
-                PopUp.init_error("INVALID ENTRY:\nFinal year cannot be greater than 2015");
+            } if (intFY > MAX_YEAR) {
+                PopUp.init_error("INVALID ENTRY:\nFinal year cannot be greater than " + MAX_YEAR);
                 return false;
-            } if (intIY < 1965) {
-                PopUp.init_error("INVALID ENTRY:\nInitial year cannot be less than 1965");
+            } if (intIY < MIN_YEAR) {
+                PopUp.init_error("INVALID ENTRY:\nInitial year cannot be less than " + MIN_YEAR);
                 return false;
             }
             if (co.matches("[a-zA-Z ]+")) {
@@ -441,7 +542,9 @@ public class SearchController {
         return false;
     }
 
-
+    /**
+     * Incomplete method to display a table of every country stored to the compare table
+     */
     public void compareSelected() {
         System.out.println("Creating Table of compared countries");
     }
@@ -461,6 +564,12 @@ public class SearchController {
         }
     }
 
+    /**
+     * If a country is selected to compare, it must be added to the compare table to be remembered
+     *
+     * @param country the Country object being selected
+     * @param cn the connection to the database
+     */
     public void addToCompare(Country country, Connection cn) {
         int year = country.year.getValue();
         String abbr = country.abbr.getValue();
@@ -495,6 +604,12 @@ public class SearchController {
         }
     }
 
+    /**
+     * If a country is undelected to compare, it must be removed from the compare table
+     *
+     * @param country the COuntry object being selected
+     * @param cn the connection to the database
+     */
     public void removeFromCompare(Country country, Connection cn) {
         int year = country.year.getValue();
         String abbr = country.abbr.getValue();
@@ -509,6 +624,13 @@ public class SearchController {
         }
     }
 
+    /**
+     * When a new Search query is created the rows selected need to be checked if any exist in the
+     * compare table
+     *
+     * @param country the Country object being checked
+     * @return returns if the Country is in the compare table or not
+     */
     private boolean checkCompare(Country country) {
         String[] creds = GetSQLInfo.getCredentials();
         String usr = creds[0];
@@ -532,7 +654,9 @@ public class SearchController {
         return false;
     }
 
-
+    /**
+     * Delete the selected Country/Years from the entire database
+     */
     public void delSelected() {
         boolean ans = PopUp.init_confirm("WARNING", "Are you sure you want delete the selected Country entries?");
         if (ans) {
