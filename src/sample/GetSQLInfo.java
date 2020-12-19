@@ -37,7 +37,7 @@ public class GetSQLInfo {
                 name = "cp.pop_size";
                 break;
             case "lng":
-                name = "cp.language";
+                name = "cp.country_language";
                 break;
             case "pde":
                 name = "cp.pop_density";

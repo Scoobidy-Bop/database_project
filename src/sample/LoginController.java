@@ -6,10 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 
 public class LoginController {
@@ -51,7 +48,7 @@ public class LoginController {
     private boolean isName(TextField first, TextField last) {
         String first_name = first.getText();
         String last_name = last.getText();
-        return first_name.matches("[a-zA-Z]+") && last_name.matches("[a-zA-Z]+");
+        return first_name.matches("[a-zA-Z ]+") && last_name.matches("[a-zA-Z ]+");
     }
 
 

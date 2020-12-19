@@ -1,21 +1,14 @@
 package sample;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.swing.table.TableColumn;
 import java.sql.*;
 
 public class EditorController {
 
-    private static Stage window;
-
     Connection conn;
-    Statement st;
     PreparedStatement preparedStatement;
 
     public TextField firstName;
@@ -32,10 +25,11 @@ public class EditorController {
 
     public void addAction(){
         getConnection();
-        System.out.println("button pressed");
         if(!checkNamesExist()){
             System.out.println("adding editor " + getFirstName() + ", " + getLastName());
             addEditor();
+        } else {
+            PopUp.init_error("ATTENTION: " + getFirstName() + " " + getLastName() + " is already registered as an editor");
         }
         try {
             conn.close();
@@ -47,7 +41,7 @@ public class EditorController {
     public void deleteAction(){
         boolean ans = PopUp.init_confirm("WARNING", "Are you sure you want delete this editor if exists?");
         if (ans) {
-            System.out.println("Deleted selected countries");
+            System.out.println("Deleted editor");
             getConnection();
             if (checkNamesExist()) {
                 deleteEditor();
